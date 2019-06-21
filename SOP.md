@@ -1,5 +1,5 @@
 # 英文原著阅读与Anki制卡
-## 1 原则
+## 1 关于Anki制卡的原则
 语言是一种神奇的东西，它表达意思，更塑造大脑，是知识的载体，也是情绪的载体。学习一门全新的语言好处多到你简直不能拒绝......
 * 扩展沟通的疆域，博古通今、拉近与世界的距离。
 * 能够将沟通的内容与情绪剥离，推荐在亲密关系中使用英语吵架，不容易伤和气。
@@ -41,7 +41,7 @@
 
 11. Set a Daily Threshold for New Cards 每天背，参加活动的目标
 
-## 2 最适合小黑书阅读的卡
+## 2 什么是最适合小黑书阅读的制卡过程？
 其实把原则用起来，就是很有难度。非常感谢做卡的小伙伴，在看了非常棒的卡，黑人问号脸卡之后，我才知道了自己想要啥，然后，才有了下面做卡的迭代。灵感来自[采采的卷耳](https://www.jianshu.com/p/5139f56057e6)，此处应有掌声。
 
 ### 2.1 阅读SOP -> 制卡SOP
@@ -174,7 +174,7 @@
 #### 3.4.1 小助手划词 OHD 学习卡
 这张卡一开始就已经有雏形了，具体情况具体分析。
 1. 完成 牛津高阶查词 的设置。
-2. 给每个 `note` 都填入 `Word`，然后选中所有需要查的词，运行FastWQ，一次性完成界面中所有存在的 `Word`。
+2. 给每个 `笔记 note` 都填入 `Word`，然后选中所有需要查的词，运行FastWQ，一次性完成界面中所有存在的 `Word`。
 4. 下划线标记一词多义中最相关的含义。
 5. 下划线标记 `Context` 中的 `Phrase`，也可以不标，那就只有加粗。
 6. `Translation` 可能不准确，做修改。
@@ -189,10 +189,10 @@
 3. 退出浏览，就会生成这个`note`的填空卡。
 
 ## 4 参考 
-[[1] PDF.js使用](https://zhuanlan.zhihu.com/p/23870485)
-[[2] 划词助手更新](https://zhuanlan.zhihu.com/p/56393716)
-[[3] Anki划词助手使用](https://zhuanlan.zhihu.com/p/22472893)
-[[4] 输入填空卡片示例](https://stefanengineering.com/anki-type-cloze/) 
-[[5] 复制笔记add-on](https://ankiweb.net/shared/info/787914845)
-[[6] Anki官方帮助](https://apps.ankiweb.net/docs/manual.html)
-[[7] 采采的卷耳](https://www.jianshu.com/p/5139f56057e6)
+[[1] PDF.js使用](https://zhuanlan.zhihu.com/p/23870485) <br>
+[[2] 划词助手更新](https://zhuanlan.zhihu.com/p/56393716) <br>
+[[3] Anki划词助手使用](https://zhuanlan.zhihu.com/p/22472893) <br>
+[[4] 输入填空卡片示例](https://stefanengineering.com/anki-type-cloze/)  <br>
+[[5] 复制笔记add-on](https://ankiweb.net/shared/info/787914845) <br>
+[[6] Anki官方帮助](https://apps.ankiweb.net/docs/manual.html) <br>
+[[7] 采采的卷耳](https://www.jianshu.com/p/5139f56057e6) <br>
