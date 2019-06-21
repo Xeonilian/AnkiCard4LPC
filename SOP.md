@@ -67,8 +67,10 @@
     - {{test:Front}}：比如{{Front}}里面的内容是 blabla "bla", "b"，使用左边的表示方式，这个内容就会被变成 blabla bla b，把不相干的东西都删了。
     - {{hint:Back}}：这个会把{{Back}}字段的内容隐藏起来，点击显示。
     - {{FrontSide}}，这个指的是`真正面`，是指你放在卡片正面所有东西。
-    - {{c1::Apple}}，{{c1::Banana}}：专门识别`填空`位置，填空叫`cloze`，所以是c1，c2...
     - {{type:Back}}：这就是真地狱级别完形填空，要求你把{{Back}}的内容打出来。
+    - {{cloze:Cloze}}：这说明{{Cloze}}这个字段是用来填空的。
+    - {{type:cloze:Cloze}}：把{{Cloze}}字段打出来。
+    - {{c1::Apple}}，{{c1::Banana}}：专门识别`填空`位置，填空叫`cloze`，所以是c1，c2...
 
 * CSS，JavaScript，HTML tag：这些内容全部都放在`卡片模板`里面，帮助我们调整卡片的外观，插入换行，音频等内容。你可以不知道这些修改，但是要理解它的功能。比如同样的一个 `note`， `basic`模板会生成一张卡片 `card`， `basic and reversed card`模板会生成两张卡片 `card`，一个看正面答背面，一个反之。你下载了用某个模板做的卡片集合，就相当于拥有了这个模板。
 * Add-on：插件提供很多方便的功能，例如`Ankiconnection`帮助我们把网页上的内容直接制作成卡片。
@@ -87,9 +89,10 @@
 * 卡片模板
     - 基于 `OHD` 模板修改的 `HCC` (OHD是划词小助手的缩写，貌似)
     - HCC = hardcore cloze，硬核完形填空 :wink:。
-        + 包括6个字段：Phrase，Context，Cloze，Translation，Word，Definition。
-        + 语素，上下文，完型填空，上下文翻译，关键词，关键词释义
+        + 包括7个字段：Phrase，Context，Cloze，Translation，Word，Definition，Boolean。
+        + 语素，上下文，完型填空，上下文翻译，关键词，关键词释义，布尔值
         + Word 并不出现在卡片的内容中，仅仅用来查询 Definition
+        + Boolean 决定是不是要添加完型填空卡片，只要填了任何值，都会自动生成 `填空卡`，但是这个值本身不会出现在卡里，
     - 包括两张卡片
         + 填空卡：Context，Cloze，Translation （正在思考要不要增加发音）。
         + 学习卡：Phrase，Context，Translation (增加项)，Definition，Phrase的发音。
@@ -141,46 +144,55 @@
 5. 设置前必须先打开 `Anki`！！！不然怎么把词放进去。
 5. 选择自动取词热键 `off`， 选择`笔记摘录脚本`，再选择一个你的 Anki 里面的 `Deck`，如果你没有看到这个选项就说明 助手没有找到 Anki，快去打开。
 6. 设置界面有 `...`，点进去做进一步的设置。
-7. 点击`输出选项`，这里你需要告诉助手，用什么卡片模板，划完 `Phrase 语素` 之后怎么样生成卡片。这里可以有很多不一样的使用习惯，所以放到3.4中说明。
+7. 点击`输出选项`，这里你需要告诉助手，用什么卡片模板，划完 `语素` 之后怎么样生成卡片。这里可以有很多不一样的使用习惯，所以放到3.4中说明。
 
 
 ### 3.4 制卡流程
 首先要说明的是，划词小助手会自动识别上下文！加粗查词的部分，如果是单词给出解释，如果是短语给出翻译。插件的运行不是很稳定，具体为什么还不是特别明白。起码要做到的是打开Anki，但不是浏览界面，据说要保持Anki激活。
 如果制卡不成功，有两种情况：
 1. 直接看到禁止的符号。
-    * Ankiconnection没有连接上，这种情况是看不选择Deck的下拉菜单的。   
+    * Ankiconnection没有连接上，这种情况是看不到Deck的下拉菜单的，这个时候插件可以当做字典。   
 2. 点击➕之后出现的是❌，不是✅
     * 可能是没有选择存的 Deck。
->不知道怎么完全避免，一般是关闭取词，然后再打开。最不济，把Anki，Firefox全部关了，再打开就好了。反正是哪里通信不对。
+>把Anki，Firefox全部关了，再打开如果出问题，反正是哪里通信不对。
+
+牢记7个字段：
+* Phrase 划词，由于识别，可以多换一换划线的起始点
+* Context 可以在小助手中修改
+* Cloze
+* Translation
+* Word
+* Definition 下划线标记
+* Boolean
 
 无论使用哪种划卡方式，
 * Phrase <-> 单词词组
 * Context <-> 原文笔记
 * Translation <-> 单一释义
-* Definition <-> 全部释义
 
-#### 3.4.1 OHD 学习卡
+
+#### 3.4.1 小助手划词 OHD 学习卡
 这张卡一开始就已经有雏形了，具体情况具体分析。
-1. 想都用 牛津高阶查词
-2. 给每个 `note` 都填入 `Word`，然后运行FastWQ，一次性完成界面中所有存在的 `Word`。
-3. 如果只想查询一部分可以使用标签 tag 完成筛选。
-4. 下划线标记一词多义中，最相关的含义。
+1. 完成 牛津高阶查词 的设置。
+2. 给每个 `note` 都填入 `Word`，然后选中所有需要查的词，运行FastWQ，一次性完成界面中所有存在的 `Word`。
+4. 下划线标记一词多义中最相关的含义。
 5. 下划线标记 `Context` 中的 `Phrase`，也可以不标，那就只有加粗。
+6. `Translation` 可能不准确，做修改。
 
 > 你可以配置多个策略，然后用不同的字典来查。
 
 #### 3.4.2 HCC 硬核完形填空
-当卡片刚刚生成的时候是没有，完形填空这张卡的，因为 `Cloze`字段是空的。你想做什么填空，就在这里编辑。
-1. 进入`浏览`界面，选中一行，在`Cloze`字段中输入上下文，一般从`Context`复制短一点的部分。
+当卡片刚刚生成的时候是没有，完形填空这张卡的，因为 `Boolean` 字段是空的。当填入 `Boolean` 后，还需要 `Cloze` 字段的内容。
+1. 进入`浏览`界面，选中一行，`Boolean` 中填入 1，或者任何值。
+1. 在`Cloze`字段中输入上下文，一般从`Context`复制短一点的部分。
 2. 选中项想作为完形填空的部分，然后点`[...]`图表，这个部分就会被`{{c1::}}`框上，我建议你，再改一改，变成`{{c1::要填的词::提示词}}`。有的时候有的词怎么也记不住，就给点提示吧。
-3. 等你退出界面，再进去，就会生成这个`note`的填空卡。
+3. 退出浏览，就会生成这个`note`的填空卡。
 
-## 4 参考
-[PDF.js使用](https://zhuanlan.zhihu.com/p/23870485)
-[划词助手更新](https://zhuanlan.zhihu.com/p/56393716)
-[Anki划词助手使用](https://zhuanlan.zhihu.com/p/22472893)
-
-[输入填空卡片示例](https://stefanengineering.com/anki-type-cloze/) 
-[复制笔记add-on](https://ankiweb.net/shared/info/787914845)
-[Anki官方帮助](https://apps.ankiweb.net/docs/manual.html)
-[采采的卷耳](https://www.jianshu.com/p/5139f56057e6)
+## 4 参考 
+[[1] PDF.js使用](https://zhuanlan.zhihu.com/p/23870485)
+[[2] 划词助手更新](https://zhuanlan.zhihu.com/p/56393716)
+[[3] Anki划词助手使用](https://zhuanlan.zhihu.com/p/22472893)
+[[4] 输入填空卡片示例](https://stefanengineering.com/anki-type-cloze/) 
+[[5] 复制笔记add-on](https://ankiweb.net/shared/info/787914845)
+[[6] Anki官方帮助](https://apps.ankiweb.net/docs/manual.html)
+[[7] 采采的卷耳](https://www.jianshu.com/p/5139f56057e6)
