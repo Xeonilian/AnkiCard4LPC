@@ -188,6 +188,24 @@
 2. 选中项想作为完形填空的部分，然后点`[...]`图表，这个部分就会被`{{c1::}}`框上，我建议你，再改一改，变成`{{c1::要填的词::提示词}}`。有的时候有的词怎么也记不住，就给点提示吧。
 3. 退出浏览，就会生成这个`note`的填空卡。
 
+#### 3.4.3 其他说明
+
+2. 一个笔记 `note` 有多个字段 `fileds`，一个笔记 `note` 可以生产多张卡片 `cards`，一个卡片 `card` 不用用所有的字段 `fileds`。
+3. 查词的时候，大小写，动词的时态会导致查不出来，记得修改。
+1. 音频是如何加入的？
+    - 加入了一个超链接到有道的发音。
+    - type 改变发音。
+    - {{text:}}删除了字段中的标点。
+```
+<audio 
+controls="controls" 
+autoplay="autoplay" 
+src="http://dict.youdao.com/dictvoice?audio={{text:Phrase}}&amp;type=2"
+controls="controls">
+</audio>
+
+```
+
 ## 4 参考 
 [[1] PDF.js使用](https://zhuanlan.zhihu.com/p/23870485) <br>
 [[2] 划词助手更新](https://zhuanlan.zhihu.com/p/56393716) <br>
