@@ -1,0 +1,83 @@
+card {
+  margin: 12px;
+  text-align: left;
+  background-color: #fff;
+}
+.cloze {font-weight: bold;color: blue;}
+
+.section {
+  color: #414141;
+  background-color: #fafafa;
+  font-family:"Segoe UI", Arial, "Microsoft Yahei", sans-serif;
+  font-size: 16px;
+  box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.2),0 0px 0px 1px rgba(0, 0, 0, 0.1);
+
+  border-radius: 4px;
+  margin: 12px 0;
+}
+
+
+.items{
+  margin: 0 12px;
+  padding: 10px 0;
+
+}
+
+
+
+.clozes{
+  margin: 0 12px;
+  padding: 10px 0;
+text-align: center !important;
+}
+
+.audio{
+  margin-left: 5px;
+}
+
+.audio img{
+  width: 64px;
+  height: 64px;
+  vertical-align: middle;
+}
+
+hr{
+  border: 0;
+  margin: 0 12px;
+  border-top: 1px solid #e5e5e5;
+}
+
+.items hr{
+  border: 0;
+  margin: 12px 0;
+  border-top: 1px solid #e5e5e5;
+}
+
+#front, 
+#back{
+  line-height: 1.5em;
+}
+
+#front{
+  font-size: 2em;
+  font-weight: bold;
+  text-align: left;
+}
+
+#back{
+  font-size: 2em;
+  font-weight: normal;
+ 
+}
+
+#front-extra1{  
+}
+
+#front-extra2{
+}
+#back-extra1{
+}
+#back-extra1{
+}
+
+u { text-decoration: none; background-color: #ffff75; border-bottom: 2px solid #ec6c4f; }
