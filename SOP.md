@@ -96,6 +96,7 @@
     - 包括两张卡片
         + 填空卡：Context，Cloze，Translation （正在思考要不要增加发音）。
         + 学习卡：Phrase，Context，Translation (增加项)，Definition，Phrase的发音。
+    - [模板文件](test.apkg)
 
 ### 3.2 工具
 *   Anki （V2.1）
