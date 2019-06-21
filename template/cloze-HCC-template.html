@@ -1,0 +1,20 @@
+<div class="section">
+<div id="front" class="clozes"> {{cloze:Cloze}}</div>
+<br>
+<div id="front" class="items"> {{type:cloze:Cloze}} </div>
+<br>
+
+/*上面是正面模板，下面是背面模板*/
+
+<div class="section">
+
+<div id="back" class="items">  {{type:Cloze}} <br>
+{{Translation}}<br> {{Context}}</div>
+
+<audio 
+controls="controls" 
+autoplay="autoplay" 
+src="http://dict.youdao.com/dictvoice?audio={{text:Phrase}}&amp;type=1"
+controls="controls">
+</audio>
+</div>
