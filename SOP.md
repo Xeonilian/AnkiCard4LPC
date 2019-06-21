@@ -46,7 +46,7 @@
 
 ### 2.1 阅读SOP -> 制卡SOP
 少花时间`做`卡，多花时间`背`卡，我们需要`SOP`（stardand operating procedure）标准操作流程，我们来构建最可能的场景。 
-!(流程)[pictures/Ebook-Anki.png]
+![流程](Ebook-Anki.png)
 
 从上面这个场景中，我们需要的信息包括：
 1. a incomprehensible `context`：一边读一笔在Kindle里划线，全部导出。也可以是其他能导出划线文本的工具。
