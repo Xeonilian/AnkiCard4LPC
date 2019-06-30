@@ -1,2 +1,2 @@
-# AnkiCard4Ebook
-Card templates for Anki used in the Cando bear 365 penguin books group reading 
+# AnkiCard4LPC
+Card templates for Anki used in the Cando bear 365 little penguin classic books.
